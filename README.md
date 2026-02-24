@@ -1,73 +1,156 @@
-# React + TypeScript + Vite
+# MockMind – AI Interview Copilot
+<img width="1262" height="714" alt="image" src="https://github.com/user-attachments/assets/865229f4-ac4e-4742-a341-f2539fcaee08" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MockMind is a company-aware AI interview preparation platform that generates personalized technical, coding, and behavioral interview prep based on:
 
-Currently, two official plugins are available:
+- Your resume
+- Target company
+- Interview role
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built using AWS Bedrock, Minimax LLMs, and Datadog observability to support scalable, production-grade AI workflows.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Overview
 
-## Expanding the ESLint configuration
+MockMind transforms interview preparation into a structured, intelligent workflow:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Create your profile and upload your resume.
+2. Add an upcoming interview (company + role).
+3. Receive AI-powered preparation tailored specifically to that interview.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Unlike generic question banks, MockMind adapts preparation dynamically based on role and company context.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧠 Core Concept
+
+MockMind is:
+
+> Company + Role + Resume Aware Interview Intelligence.
+
+When a user enters:
+- Company (e.g., Google)
+- Role (e.g., Data Scientist)
+
+The system generates structured preparation in:
+
+- Technical concepts
+- Coding challenges
+- Behavioral questions
+
+All aligned with the candidate’s experience and target role.
+
+---
+
+## 🏗️ Architecture
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+
+### AI Layer
+- AWS Bedrock (LLM orchestration)
+- Minimax models for structured question generation
+- Prompt engineering for role-aware generation
+- Resume-context injection pipeline
+
+### Observability & Monitoring
+- Datadog for:
+  - LLM latency monitoring
+  - API request tracking
+  - Error logging
+  - Performance metrics
+  - System health dashboards
+
+The observability layer ensures production reliability and scalable AI performance.
+
+---
+
+## 🧩 Product Flow
+
+### Step 1 – Profile Setup
+Users provide:
+- Personal information
+- Experience level
+- Resume upload
+
+Resume data is parsed and used for contextual personalization.
+
+### Step 2 – Applications
+Users enter:
+- Company name
+- Role title
+
+Each entry becomes a dedicated preparation workspace.
+
+<img width="1271" height="718" alt="image" src="https://github.com/user-attachments/assets/04147a4a-a829-4e3b-920a-6b8ba78ccfb1" />
+
+### Step 3 – Interview Prep
+Preparation is divided into:
+
+- Technical
+- Coding
+- Behavioral
+
+Questions are generated using:
+- Company-specific patterns
+- Role expectations
+- Resume-based contextual awareness
+
+---
+
+## 🎯 Key Features
+
+- Resume-aware AI generation
+- Company-specific interview alignment
+- Role-based question structuring
+- AI-powered mock session generation
+- Observability-first architecture
+- Scalable LLM backend via AWS Bedrock
+- Production monitoring via Datadog
+
+---
+
+## 📂 Project Structure
+
+src/ ├── App.tsx ├── components/ ├── pages/ ├── hooks/ └── styles/
+
+
+
+Designed for modular AI expansion and backend integration.
+
+---
+
+## 🔮 Roadmap
+
+- Resume parsing automation
+- Interview simulation mode
+- Agent-based interview reasoning
+- Analytics dashboard
+- Cloud deployment pipeline
+- Multi-model orchestration
+
+---
+
+## 🛠️ Getting Started
+
+### Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm run dev
+```
+
+🌩️ Infrastructure Stack
+* AWS Bedrock for LLM orchestration
+* Minimax LLM for structured interview generation
+* Datadog for monitoring and observability
+* Scalable cloud-ready architecture
